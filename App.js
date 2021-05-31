@@ -26,15 +26,15 @@ export default class App extends React.Component {
           {parseFloat(this.state.currentValue).toLocaleString()}
         </Text>
         <View style={styles.row}>
-          <Button text="7" />
-          <Button text="8" />
-          <Button text="9" />
-          <Button text="X" />
+          <Button text="7" onPress={() => this.handleTap("number", 7)} />
+          <Button text="8" onPress={() => this.handleTap("number", 8)} />
+          <Button text="9" onPress={() => this.handleTap("number", 9)} />
+          <Button text="X" onPress={() => this.handleTap("operator", "*")} />
         </View>
         <View style={styles.row}>
-          <Button text="4" />
-          <Button text="5" />
-          <Button text="6" />
+          <Button text="4" onPress={() => this.handleTap("number", 4)} />
+          <Button text="5" onPress={() => this.handleTap("number", 5)} />
+          <Button text="6" onPress={() => this.handleTap("number", 6)} />
           <Button text="-" />
         </View>
         <View style={styles.row}>
