@@ -3,9 +3,7 @@ import { Text, View, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 import Button from './components/Button';
 
-// or any pure javascript modules available in npm
-import { Card } from 'react-native-paper';
-import { intialState, calculator } from './calculator';
+import { calculator } from './calculator';
 
 export default class App extends React.Component {
 
@@ -14,7 +12,7 @@ export default class App extends React.Component {
     operator: null,
     previousValue: null
   };
-  
+
   handleTap = (type, value) => {
     this.setState(state => calculator(type, value, state));
   }
@@ -35,19 +33,19 @@ export default class App extends React.Component {
           <Button text="4" onPress={() => this.handleTap("number", 4)} />
           <Button text="5" onPress={() => this.handleTap("number", 5)} />
           <Button text="6" onPress={() => this.handleTap("number", 6)} />
-          <Button text="-" />
+          <Button text="-" onPress={() => this.handleTap("operator", "-")} />
         </View>
         <View style={styles.row}>
           <Button text="1" onPress={() => this.handleTap("number", 1)} />
           <Button text="2" onPress={() => this.handleTap("number", 2)} />
           <Button text="3" onPress={() => this.handleTap("number", 3)} />
-          <Button text="+" />
+          <Button text="+" onPress={() => this.handleTap("operator", "+")} />
         </View>
         <View style={styles.row}>
-          <Button text="0" />
-          <Button text="." />
+          <Button text="0" onPress={() => this.handleTap("number", 0)} />
+          <Button text="." onPress={() => this.handleTap("number", ".")} />
           <Button text="C" onPress={() => this.handleTap("clear")} />
-          <Button text="=" />
+          <Button text="=" onPress={() => this.handleTap("equal")} />
         </View>
       </View>
     );
