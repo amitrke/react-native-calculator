@@ -33,7 +33,7 @@ export default class App extends React.Component {
           <Button text="4" onPress={() => this.handleTap("number", 4)} />
           <Button text="5" onPress={() => this.handleTap("number", 5)} />
           <Button text="6" onPress={() => this.handleTap("number", 6)} />
-          <Button text="-" onPress={() => this.handleTap("operator", "-")} />
+          <Button text="-" theme="orange" onPress={() => this.handleTap("operator", "-")} />
         </View>
         <View style={styles.row}>
           <Button text="1" onPress={() => this.handleTap("number", 1)} />
